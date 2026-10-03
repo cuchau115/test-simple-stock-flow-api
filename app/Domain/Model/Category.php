@@ -32,7 +32,7 @@ final class Category
         $name = trim($name);
 
         if ($name === '') {
-            throw InvalidNameException::blank('categoría');
+            throw InvalidNameException::category();
         }
 
         $this->name = $name;

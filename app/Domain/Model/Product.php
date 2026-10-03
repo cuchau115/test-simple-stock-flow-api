@@ -44,7 +44,7 @@ final class Product
         $name = trim($name);
 
         if ($name === '') {
-            throw InvalidNameException::blank('producto');
+            throw InvalidNameException::product();
         }
 
         self::assertSellingCurrency($price);
@@ -54,7 +54,7 @@ final class Product
         }
 
         if ($stock < 0) {
-            throw InvalidStockException::negative();
+            throw InvalidStockException::negativeInitial();
         }
 
         return new self($id, $name, $price, $stock, $categoryId, self::normalizeImageKey($imageKey));
@@ -65,7 +65,7 @@ final class Product
         $name = trim($name);
 
         if ($name === '') {
-            throw InvalidNameException::blank('producto');
+            throw InvalidNameException::product();
         }
 
         $this->name = $name;
@@ -90,7 +90,7 @@ final class Product
     public function withdraw(Quantity $quantity): void
     {
         if ($quantity->value() > $this->stock) {
-            throw InsufficientStockException::forRequest($quantity->value(), $this->stock);
+            throw InsufficientStockException::forProduct($this->name, $this->stock, $quantity->value());
         }
 
         $this->stock -= $quantity->value();

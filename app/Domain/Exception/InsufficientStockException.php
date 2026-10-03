@@ -6,12 +6,13 @@ namespace App\Domain\Exception;
 
 final class InsufficientStockException extends BusinessRuleViolation
 {
-    public static function forRequest(int $requested, int $available): self
+    public static function forProduct(string $productName, int $available, int $requested): self
     {
         return new self(sprintf(
-            'No hay stock suficiente: se pidieron %d y hay %d',
-            $requested,
+            "Stock insuficiente para '%s': disponible %d, solicitado %d.",
+            $productName,
             $available,
+            $requested,
         ));
     }
 }

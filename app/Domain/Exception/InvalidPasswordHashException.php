@@ -8,6 +8,6 @@ final class InvalidPasswordHashException extends BusinessRuleViolation
 {
     public static function blank(): self
     {
-        return new self('La huella de la contraseña no puede estar vacía');
+        return new self('La huella de la contraseña no puede estar vacía.');
     }
 }

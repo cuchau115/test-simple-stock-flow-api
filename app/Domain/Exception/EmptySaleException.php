@@ -8,6 +8,6 @@ final class EmptySaleException extends BusinessRuleViolation
 {
     public static function cannotConfirm(): self
     {
-        return new self('Una venta debe tener al menos una línea');
+        return new self('La venta debe tener al menos un ítem.');
     }
 }

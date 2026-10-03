@@ -8,11 +8,11 @@ final class InvalidRoleException extends BusinessRuleViolation
 {
     public static function notAllowed(string $value): self
     {
-        return new self(sprintf('El rol "%s" no es válido', $value));
+        return new self(sprintf("Rol no válido: '%s'.", $value));
     }
 
     public static function missing(): self
     {
-        return new self('El rol es obligatorio');
+        return new self('El rol es obligatorio.');
     }
 }

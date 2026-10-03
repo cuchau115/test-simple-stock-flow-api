@@ -8,6 +8,11 @@ final class InvalidStockException extends BusinessRuleViolation
 {
     public static function negative(): self
     {
-        return new self('El stock no puede ser negativo');
+        return new self('El stock no puede ser negativo.');
+    }
+
+    public static function negativeInitial(): self
+    {
+        return new self('El stock inicial no puede ser negativo.');
     }
 }

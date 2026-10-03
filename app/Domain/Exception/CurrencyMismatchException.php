@@ -8,6 +8,6 @@ final class CurrencyMismatchException extends BusinessRuleViolation
 {
     public static function expected(string $expected, string $given): self
     {
-        return new self(sprintf('La moneda del importe debe ser %s, no %s', $expected, $given));
+        return new self(sprintf('La moneda del importe debe ser %s, no %s.', $expected, $given));
     }
 }
