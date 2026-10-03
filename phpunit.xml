@@ -12,6 +12,9 @@
         <testsuite name="domain">
             <directory>tests/Domain</directory>
         </testsuite>
+        <testsuite name="application">
+            <directory>tests/Application</directory>
+        </testsuite>
     </testsuites>
     <source>
         <include>
