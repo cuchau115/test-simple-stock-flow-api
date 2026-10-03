@@ -8,6 +8,6 @@ final class ProductNotFoundException extends BusinessRuleViolation
 {
     public static function withId(string $id): self
     {
-        return new self(sprintf('El producto %s no existe', $id));
+        return new self(sprintf('El producto %s no existe.', $id));
     }
 }

@@ -6,8 +6,13 @@ namespace App\Domain\Exception;
 
 final class InvalidNameException extends BusinessRuleViolation
 {
-    public static function blank(string $what): self
+    public static function product(): self
     {
-        return new self(sprintf('El nombre de %s no puede estar vacío', $what));
+        return new self('El nombre del producto es obligatorio.');
+    }
+
+    public static function category(): self
+    {
+        return new self('El nombre de la categoría es obligatorio.');
     }
 }

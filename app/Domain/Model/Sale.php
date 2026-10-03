@@ -52,7 +52,7 @@ final class Sale
         $categoryName = trim($categoryName);
 
         if ($categoryName === '') {
-            throw InvalidNameException::blank('categoría');
+            throw InvalidNameException::category();
         }
 
         $product->withdraw($quantity);

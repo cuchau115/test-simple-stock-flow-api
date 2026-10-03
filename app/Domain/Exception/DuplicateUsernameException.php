@@ -8,6 +8,6 @@ final class DuplicateUsernameException extends BusinessRuleViolation
 {
     public static function withUsername(string $username): self
     {
-        return new self(sprintf('El nombre de usuario "%s" ya está en uso', $username));
+        return new self(sprintf("El usuario '%s' ya existe.", $username));
     }
 }

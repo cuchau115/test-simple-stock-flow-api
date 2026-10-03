@@ -12,6 +12,6 @@ final class InvalidCredentialsException extends BusinessRuleViolation
      */
     public static function rejected(): self
     {
-        return new self('Usuario o contraseña incorrectos');
+        return new self('Usuario o contraseña incorrectos.');
     }
 }

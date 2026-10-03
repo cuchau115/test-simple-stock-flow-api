@@ -8,6 +8,6 @@ final class RepeatedProductException extends BusinessRuleViolation
 {
     public static function inSale(): self
     {
-        return new self('Un producto no puede repetirse en la misma venta');
+        return new self('La venta tiene productos repetidos.');
     }
 }
